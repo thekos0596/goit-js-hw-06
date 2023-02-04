@@ -4,8 +4,9 @@ inputEl.addEventListener("blur", lostFocus);
 
 function lostFocus() {
   if (inputEl.value.length === Number(inputEl.dataset.length)) {
-    inputEl.classList.remove("invalid");
-    return inputEl.classList.add("valid");
+    inputEl.classList.add("valid");
+  } else if (inputEl.value.length !== Number(inputEl.dataset.length)) {
+    inputEl.classList.remove("valid");
+    inputEl.classList.add("invalid");
   }
-  return inputEl.classList.add("invalid");
 }

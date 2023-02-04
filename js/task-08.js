@@ -8,7 +8,7 @@ function handleSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
+  if (email.value.trim() === "" || password.value === "") {
     return alert(
       "HEY Man! Are You LAZY? Please Fill in All the Fields! Quickly! "
     );
@@ -19,14 +19,4 @@ function handleSubmit(event) {
   };
   console.log(formData);
   event.currentTarget.reset();
-
-  //   const formData = new FormData(event.currentTarget);
-  //   console.log(formData);
-
-  //   formData.forEach((value, name) => {
-  //     console.log("name:", name);
-  //     console.log("value:", value);
-  //   });
-
-  //   console.log(`Email: ${email.value}; Password: ${password.value}`);
 }
